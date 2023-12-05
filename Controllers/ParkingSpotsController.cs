@@ -114,6 +114,30 @@ namespace projecto_bases_de_datos_api.Controllers
         {
             return _context.ParkingSpots.Any(e => e.ParkingSpotID == id);
         }
+
+
+        [HttpGet("ClosestAvailable/{userId}")]
+        public async Task<ActionResult<ParkingSpot>> GetClosestAvailableParkingSpot(int userId)
+        {
+            var user = await _context.Users.FindAsync(userId);
+            if (user == null)
+            {
+                return NotFound("User not found.");
+            }
+
+            var closestParkingSpot = await _context.ParkingSpots
+                .Where(ps => !ps.IsOccupied && ps.BuildingID == user.BuildingID)
+                .OrderBy(ps => ps.ParkingSpotID)
+                .FirstOrDefaultAsync();
+
+            if (closestParkingSpot == null)
+            {
+                return NotFound("No available parking spot found for the user's building.");
+            }
+
+            return closestParkingSpot;
+        }
+
     }
 
 }
