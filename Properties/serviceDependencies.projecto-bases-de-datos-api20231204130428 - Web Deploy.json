@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "apis1": {
+      "apiEndpoint": "https://projecto-bases-de-datos-apiapi.azure-api.net/",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/projecto-bases-de-datos-apiapi/apis/projecto-bases-de-datos-api",
+      "type": "apis.azure"
+    }
+  }
+}
