@@ -1,6 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<parameters>
-  <parameter name="IIS Web Application Name" description="" value="projecto-bases-de-datos-api20231204130428" tags="IisApp">
-    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Users\\DVILLALOBO1\\source\\repos\\projecto-bases-de-datos-api\\obj\\Release\\net7\.0\\PubTmp\\Out\\$" />
-  </parameter>
-</parameters>
